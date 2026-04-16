@@ -20,7 +20,7 @@ var (
 func main() {
 	var (
 		configPath  = flag.String("config", "config.yaml", "path to configuration file")
-		listenAddr  = flag.String("listen", ":8080", "address to listen on")
+		listenAddr  = flag.String("listen", ":11434", "address to listen on")
 		showVersion = flag.Bool("version", false, "show version information")
 		logLevel    = flag.String("log-level", "info", "log level: info, warn, error")
 	)
@@ -38,7 +38,7 @@ func main() {
 	}
 
 	// Apply CLI overrides
-	if *listenAddr != ":8080" || cfg.ListenAddr == "" {
+	if *listenAddr != ":11434" || cfg.ListenAddr == "" {
 		cfg.ListenAddr = *listenAddr
 	}
 
@@ -61,8 +61,7 @@ func main() {
 		sig := <-sigCh
 		log.Printf("received signal %s, shutting down...", sig)
 
-	}()
+ = server
 
-
-	log.Println("llama-swap stopped")
-}
+llama-swap stopped")
+change listen port to 11434 to match ollama convention
