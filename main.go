@@ -22,12 +22,12 @@ func main() {
 		configPath  = flag.String("config", "config.yaml", "path to configuration file")
 		listenAddr  = flag.String("listen", ":8080", "address to listen on")
 		showVersion = flag.Bool("version", false, "show version information")
-		logLevel    = flag.String("log-level", "info", "log level (debug, info, warn, error)")
+		logLevel    = flag.String("log-level", "info info, warn, error)")
 	)
 	flag.Parse()
 
 	if *showVersion {
-		fmt.Printf("llama-swap %s (commit: %s, built: %s)\n", version, commit, date)
+"llama-swap %s (commit: %s, built: %s)\n", version, commit, date)
 		os.Exit(0)
 	}
 
@@ -59,8 +59,12 @@ func main() {
 
 	go func() {
 		sig := <-sigCh
-		log.Printf("received signal %s, shutting down...", err := server.Start(); err != nil {
-		: %v", err)
+		log.Printf("received signal %s, shutting down...", sig)
+		server.Stop()
+	}()
+
+	if err := server.Start(); err != nil {
+		log.Fatalf("server error: %v", err)
 	}
 
 	log.Println("llama-swap stopped")
