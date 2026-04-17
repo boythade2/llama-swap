@@ -59,9 +59,11 @@ func main() {
 
 	go func() {
 		sig := <-sigCh
-		log.Printf("received signal %s, shutting down...", sig)
+		log.Printf("received signal %s, shutting down...",.Stop()
+		os.Exit(0)
+	}()
 
- = server
-
-llama-swap stopped")
-change listen port to 11434 to match ollama convention
+	 err := server.Start(); err != nil {
+		log.Fatalf("server error: %v", err)
+	}
+}
